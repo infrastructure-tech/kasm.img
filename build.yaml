@@ -8,11 +8,11 @@ next:
 	config:
 		base_image: kasmweb/api:1.15.0
 		image_name: eons/kasm.img
-		image_os: ubuntu
+		image_os: debian
 		install:
-		- postgresql
+		- postgresql-client
 		tags: 
-    - "1.15.0"
+		- "1.15.0"
 		- latest
 - build: docker_publish
 	run_when_any:
