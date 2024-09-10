@@ -12,9 +12,10 @@ next:
 		install:
 		- postgresql-client
 		- wget
+		- python3.8-dev
 		also:
 		- RUN wget -qO /usr/local/bin/yq $(curl -s https://api.github.com/repos/mikefarah/yq/releases/latest | grep "browser_download_url.*linux_amd64" | cut -d '"' -f 4) && chmod +x /usr/local/bin/yq
-		- RUN wget -qO- https://github.com/kasmweb-decompilation/api/raw/main/kasm_server.so.gz | gunzip -c > /usr/local/bin/kasm && chmod +x /usr/local/bin/kasm
+		- RUN wget -qO- https://github.com/kasmweb-decompilation/api/raw/main/kasm_server.so.gz | gunzip -c > /usr/bin/kasm && chmod +x /usr/bin/kasm
 		tags: 
 		- "1.15.0"
 		- latest
