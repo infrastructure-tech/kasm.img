@@ -11,6 +11,8 @@ next:
 		base_image: kasmweb/api:1.15.0
 		image_name: eons/kasm.img
 		image_os: debian
+		combine:
+		- kasmweb/manager:1.15.0
 		install:
 		- postgresql-client
 		- wget
