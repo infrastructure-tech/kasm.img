@@ -16,6 +16,7 @@ next:
 		also:
 		- RUN wget -qO /usr/local/bin/yq $(curl -s https://api.github.com/repos/mikefarah/yq/releases/latest | grep "browser_download_url.*linux_amd64" | cut -d '"' -f 4) && chmod +x /usr/local/bin/yq
 		- RUN wget -qO- https://github.com/kasmweb-decompilation/api/raw/main/kasm_server.so.gz | gunzip -c > /usr/bin/kasm && chmod +x /usr/bin/kasm
+		entrypoint: /usr/bin/kasm --cfg /opt/kasm/current/conf/app/api.app.config.yaml --enable-admin-api --enable-client-api --enable-public-api
 		tags: 
 		- "1.15.0"
 		- latest
