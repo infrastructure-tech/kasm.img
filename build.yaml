@@ -8,11 +8,11 @@ next:
 	copy:
 	- ../kasm_release: kasm_release/
 	config:
-		base_image: kasmweb/api:1.15.0
+		base_image: kasmweb/api:1.16.0
 		image_name: eons/kasm.img
 		image_os: debian
 		combine:
-		- kasmweb/manager:1.15.0
+		- kasmweb/manager:1.16.0
 		install:
 		- postgresql-client
 		- wget
@@ -23,7 +23,7 @@ next:
 		- RUN wget -qO- https://github.com/kasmweb-decompilation/api/raw/main/kasm_server.so.gz | gunzip -c > /usr/bin/kasm && chmod +x /usr/bin/kasm
 		entrypoint: /usr/bin/kasm --cfg /opt/kasm/current/conf/app/api.app.config.yaml --enable-admin-api --enable-client-api --enable-public-api
 		tags: 
-		- "1.15.0"
+		- "1.16.0"
 		- latest
 - build: docker_publish
 	run_when_any:
