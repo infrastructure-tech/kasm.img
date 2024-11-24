@@ -16,7 +16,7 @@ next:
 		install:
 		- postgresql-client
 		- wget
-		- python3.8-dev
+		# - python3.8-dev # No longer available?
 		also:
 		- COPY kasm_release /opt/kasm/current/
 		- RUN wget -qO /usr/local/bin/yq $(curl -s https://api.github.com/repos/mikefarah/yq/releases/latest | grep "browser_download_url.*linux_amd64" | cut -d '"' -f 4) && chmod +x /usr/local/bin/yq
